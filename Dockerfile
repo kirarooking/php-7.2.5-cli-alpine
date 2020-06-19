@@ -22,3 +22,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer global require hirak/prestissimo
 
 WORKDIR /srv/app
+
+# To use this container, write crontab to /etc/crontabs/root
+RUN touch /usr/local/bin/foreground & chmod u+x /usr/local/bin/foreground
+RUN echo "printenv > /etc/environment & crond -f -l 2" > /usr/local/bin/foreground
+CMD ["foreground"]
