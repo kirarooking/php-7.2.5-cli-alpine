@@ -56,5 +56,5 @@ RUN apk --no-cache add \
 # To use this container, write crontab to /etc/crontabs/root
 RUN touch /usr/local/bin/foreground
 RUN chmod u+x /usr/local/bin/foreground
-RUN echo "printenv > /etc/environment & crond -f -l 2" > /usr/local/bin/foreground
+RUN echo "printenv > /root/.profile & crond -f -l 2" > /usr/local/bin/foreground
 CMD ["foreground"]
