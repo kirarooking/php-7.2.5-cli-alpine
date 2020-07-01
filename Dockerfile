@@ -23,8 +23,6 @@ RUN composer global require hirak/prestissimo
 
 WORKDIR /srv/app
 
-RUN rm /var/cache/apk/*
-
 # To use this container, copyyour custom laravel.ini to /etc/supervisor.d/laravel.ini
 COPY supervisor.conf /etc/supervisor.conf
 COPY laravel.ini /etc/supervisor.d/laravel.ini
